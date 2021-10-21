@@ -12,7 +12,7 @@ func TestOneElements(t *testing.T) {
 	}
 }
 func TestTwoElements(t *testing.T) {
-	list := []string{"apple", " orange"}
+	list := []string{"apple", "orange"}
 	if JoinWithCommas(list) != "apple and orange" {
 		t.Error("From TestTwoElements : Did  not match expected value . the result : ", JoinWithCommas(list))
 
