@@ -11,8 +11,17 @@ func JoinWithCommas(phrases []string) string {
 		them all together with. Join returns a single string with all the items from the slice combined,
 		with the joining string separating each entry.
 	*/
-	res := strings.Join(phrases[:len(phrases)-1], ", ") // phrases[:len(phrases)-1] : gives all but the last one
-	res += ", and "                                     // add the and
-	res += phrases[len(phrases)-1]                      // gives the last one
-	return res
+	if len(phrases) > 1 {
+		res := strings.Join(phrases[:len(phrases)-1], ",") // phrases[:len(phrases)-1] : gives all but the last one
+		if len(phrases) == 2 {
+			res += " and"
+		} else {
+			res += ", and "
+		} // add the and
+
+		res += phrases[len(phrases)-1] // gives the last one
+		return res
+	} else {
+		return phrases[0]
+	}
 }
