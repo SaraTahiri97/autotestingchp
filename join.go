@@ -12,7 +12,7 @@ func JoinWithCommas(phrases []string) string {
 		with the joining string separating each entry.
 	*/
 	res := strings.Join(phrases[:len(phrases)-1], ", ") // phrases[:len(phrases)-1] : gives all but the last one
-	res += "and "                                       // add the and
+	res += ", and "                                     // add the and
 	res += phrases[len(phrases)-1]                      // gives the last one
 	return res
 }
